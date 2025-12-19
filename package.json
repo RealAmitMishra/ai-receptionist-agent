@@ -1,0 +1,28 @@
+{
+  "name": "ai-receptionist-agent",
+  "version": "1.0.0",
+  "description": "An AI-powered virtual receptionist that handles appointment scheduling using a smart agent, natural language input, and Google Calendar integration.",
+  "scripts": {
+    "install-n8n": "npm install -g n8n",
+    "start": "n8n start"
+  },
+  "keywords": [
+    "n8n",
+    "ai",
+    "receptionist",
+    "appointment",
+    "scheduling",
+    "openai",
+    "google-calendar",
+    "automation"
+  ],
+  "author": "Amit Mishra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RealAmitMishra/ai-receptionist-agent.git"
+  },
+  "devDependencies": {
+    "n8n": "^1.0.0"
+  }
+}
