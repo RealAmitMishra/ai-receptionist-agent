@@ -2,6 +2,22 @@
 
 An AI-powered virtual receptionist that handles appointment scheduling using a smart agent, natural language input, and Google Calendar integration.
 
+## 🚀 Quick Start
+
+```bash
+# Clone and install
+git clone https://github.com/RealAmitMishra/ai-receptionist-agent.git
+cd ai-receptionist-agent
+./install.sh  # or install.bat on Windows
+
+# Start n8n
+npm run start
+
+# Open http://localhost:5678 and import the workflow
+```
+
+See [INSTALL.md](INSTALL.md) for detailed installation instructions.
+
 ---
 
 ## 🧠 What It Does
@@ -28,8 +44,13 @@ This agent automates the appointment booking process by:
 
 ## 📂 Project Files
 
-- `AI_Receptionist_Agent.json` — Full n8n workflow
+- `AI_Receptionist_Agent (1).json` — Full n8n workflow
 - `README.md` — This file
+- `INSTALL.md` — Detailed installation guide
+- `package.json` — Node.js package configuration
+- `install.sh` — Installation script for Linux/macOS
+- `install.bat` — Installation script for Windows
+- `.gitignore` — Git ignore configuration
 
 ---
 
