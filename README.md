@@ -33,14 +33,96 @@ This agent automates the appointment booking process by:
 
 ---
 
+## 📦 Installation
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- An OpenAI API key
+- A Google Calendar account with API access
+
+### Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/RealAmitMishra/ai-receptionist-agent.git
+   cd ai-receptionist-agent
+   ```
+
+2. **Install n8n**
+   ```bash
+   npm install
+   npm run install-n8n
+   ```
+   
+   Or install n8n globally:
+   ```bash
+   npm install -g n8n
+   ```
+
+3. **Start n8n**
+   ```bash
+   npm run start
+   ```
+   
+   Or if installed globally:
+   ```bash
+   n8n start
+   ```
+
+4. **Access n8n**
+   - Open your browser and navigate to `http://localhost:5678`
+   - Create an account or log in
+
+---
+
 ## 🔄 How to Use
 
-1. Import the `.json` workflow into your n8n instance
-2. Set up credentials for:
-   - **OpenAI** (for AI reasoning)
-   - **Google Calendar** (for availability & booking)
-3. Configure your webhook to receive appointment requests
-4. Deploy and test via a POST request or UI form
+1. **Import the workflow**
+   - In n8n, go to **Workflows** → **Import from File**
+   - Select the `AI_Receptionist_Agent (1).json` file from this repository
+   - The workflow will be imported into your n8n instance
+
+2. **Set up credentials**
+   - **OpenAI API**: 
+     - Click on the "OpenAI Chat Model" node
+     - Add your OpenAI API credentials
+     - Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+   
+   - **Google Calendar**:
+     - Click on the "Google Calendar" nodes
+     - Add your Google Calendar OAuth2 credentials
+     - Follow the authentication flow to grant access
+
+3. **Configure the webhook**
+   - Click on the "Webhook" node
+   - Note the webhook URL (it will be displayed in the node)
+   - Update the calendar ID in both Google Calendar nodes to match your calendar
+
+4. **Activate and test**
+   - Click "Activate" to enable the workflow
+   - Test via a POST request to the webhook URL with appointment details
+   - Example payload:
+     ```json
+     {
+       "body": {
+         "message": {
+           "toolCalls": [{
+             "id": "test-123",
+             "function": {
+               "arguments": {
+                 "Name": "John Doe",
+                 "Phone Number": "+1234567890",
+                 "Email Address": "john@example.com",
+                 "Date and Time": "2024-06-05T15:00:00Z"
+               }
+             }
+           }]
+         }
+       }
+     }
+     ```
 
 ---
 
