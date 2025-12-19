@@ -19,6 +19,20 @@ echo ✓ Node.js detected
 node -v
 echo.
 
+REM Check Node.js version (extract major version)
+for /f "tokens=1,2 delims=.v" %%a in ('node -v') do set NODE_MAJOR=%%a
+if %NODE_MAJOR% LSS 18 (
+    echo ⚠️  Node.js version 18 or higher is required.
+    echo Current version: 
+    node -v
+    echo Please upgrade Node.js from https://nodejs.org/
+    pause
+    exit /b 1
+)
+
+echo ✓ Node.js version is compatible
+echo.
+
 REM Check for npm
 where npm >nul 2>nul
 if %errorlevel% neq 0 (
